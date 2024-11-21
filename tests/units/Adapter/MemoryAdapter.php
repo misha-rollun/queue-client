@@ -2,7 +2,7 @@
 
 namespace ReputationVIP\QueueClient\tests\units\Adapter;
 
-use mageekguy\atoum;
+use atoum\atoum;
 use ReputationVIP\QueueClient\PriorityHandler\Priority\Priority;
 use ReputationVIP\QueueClient\PriorityHandler\StandardPriorityHandler;
 use ReputationVIP\QueueClient\PriorityHandler\ThreeLevelPriorityHandler;

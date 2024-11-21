@@ -8,14 +8,14 @@
     }
   ],
   "require": {
-    "symfony/filesystem": "^3.4",
-    "symfony/finder": "^3.4",
-    "symfony/lock": "^3.4",
-    "aws/aws-sdk-php": "^2.7"
+    "symfony/filesystem": "^6.4",
+    "symfony/finder": "^6.4",
+    "symfony/lock": "^6.4",
+    "aws/aws-sdk-php": "^3.328.3"
   },
   "require-dev": {
-    "atoum/atoum": "~3.1",
-    "satooshi/php-coveralls": "^2.0"
+    "atoum/atoum": "^4.2",
+    "php-coveralls/php-coveralls": "^2.7"
   },
   "autoload": {
     "psr-4": {

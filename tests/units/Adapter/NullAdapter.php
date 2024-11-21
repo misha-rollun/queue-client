@@ -2,7 +2,7 @@
 
 namespace ReputationVIP\QueueClient\tests\units\Adapter;
 
-use mageekguy\atoum;
+use atoum\atoum;
 
 class NullAdapter extends atoum\test
 {

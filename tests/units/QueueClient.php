@@ -2,7 +2,7 @@
 
 namespace ReputationVIP\QueueClient\tests\units;
 
-use mageekguy\atoum;
+use atoum\atoum;
 use ReputationVIP\QueueClient\Adapter\MemoryAdapter;
 
 class QueueClient extends atoum\test

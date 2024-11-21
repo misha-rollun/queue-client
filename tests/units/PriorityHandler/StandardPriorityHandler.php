@@ -2,7 +2,7 @@
 
 namespace ReputationVIP\QueueClient\tests\units\PriorityHandler;
 
-use mageekguy\atoum;
+use atoum\atoum;
 use ReputationVIP\QueueClient\PriorityHandler\Priority\Priority;
 
 class StandardPriorityHandler extends atoum\test

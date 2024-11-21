@@ -11,7 +11,7 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use Symfony\Component\Lock\Factory;
+use Symfony\Component\Lock\LockFactory;
 use Symfony\Component\Lock\Store\FlockStore;
 
 class FileAdapter extends AbstractAdapter implements AdapterInterface
@@ -31,7 +31,7 @@ class FileAdapter extends AbstractAdapter implements AdapterInterface
     /** @var Filesystem $fs */
     private $fs;
 
-    /** @var Factory $lockHandlerFactory */
+    /** @var LockFactory $lockHandlerFactory */
     private $lockHandlerFactory;
 
     /** @var PriorityHandlerInterface $priorityHandler */
@@ -42,12 +42,12 @@ class FileAdapter extends AbstractAdapter implements AdapterInterface
      * @param PriorityHandlerInterface $priorityHandler
      * @param Filesystem $fs
      * @param Finder $finder
-     * @param Factory $lockHandlerFactory
+     * @param LockFactory $lockHandlerFactory
      *
      * @throws \InvalidArgumentException
      * @throws QueueAccessException
      */
-    public function __construct($repository, PriorityHandlerInterface $priorityHandler = null, Filesystem $fs = null, Finder $finder = null, Factory $lockHandlerFactory = null)
+    public function __construct(string $repository, PriorityHandlerInterface $priorityHandler = null, Filesystem $fs = null, Finder $finder = null, LockFactory $lockHandlerFactory = null)
     {
         if (empty($repository)) {
             throw new \InvalidArgumentException('Argument repository empty or not defined.');
@@ -76,7 +76,7 @@ class FileAdapter extends AbstractAdapter implements AdapterInterface
         }
 
         if (null === $lockHandlerFactory) {
-            $lockHandlerFactory = new Factory(new FlockStore($repository));
+            $lockHandlerFactory = new LockFactory(new FlockStore($repository));
         }
 
         $this->priorityHandler = $priorityHandler;

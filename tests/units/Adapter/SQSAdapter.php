@@ -2,7 +2,7 @@
 
 namespace ReputationVIP\QueueClient\tests\units\Adapter;
 
-use mageekguy\atoum;
+use atoum\atoum;
 use ReputationVIP\QueueClient\PriorityHandler\ThreeLevelPriorityHandler;
 
 class SQSAdapter extends atoum\test
