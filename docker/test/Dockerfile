@@ -11,6 +11,4 @@ COPY ./ssh/ssh_config /etc/ssh/ssh_config
 
 COPY ./conf.d  /usr/local/etc/php/conf.d
 
-RUN mkdir "/tmp/test"
-
 WORKDIR /data

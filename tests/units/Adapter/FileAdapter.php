@@ -19,6 +19,13 @@ class MockIOExceptionInterface extends \Exception implements IOExceptionInterfac
 
 class FileAdapter extends atoum\test
 {
+    public function setUp(): void
+    {
+        if (!is_dir('/tmp/test')) {
+            mkdir('/tmp/test', 0777, true);
+        }
+    }
+
     public function testFileAdapterClass()
     {
         $this->testedClass->implements('\ReputationVIP\QueueClient\Adapter\AdapterInterface');
